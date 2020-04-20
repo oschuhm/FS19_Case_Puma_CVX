@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="JD7530SN" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor" version="4.1.7"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="adStrip.dds" relativePath="true"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="Default" materialId="11" diffuseColor="1 0 1 1" ambientColor="1 1 1">
+    </Material>
+    <Material name="adStrip" materialId="13" ambientColor="1 1 1" cosPower="50" specularColor="0.165 0.165 0.165" alphaBlending="true">
+      <Texture fileId="2"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes>
+    <IndexedTriangleSet name="adStrip" shapeId="1">
+      <Vertices count="6" normal="true" uv0="true">
+        <v p="0.256 0.129 -0" n="0 0 1" t0="0.992248 1"/>
+        <v p="-0.256 -0.129 -0" n="0 0 1" t0="0 0"/>
+        <v p="0.256 -0.129 -0" n="0 0 1" t0="0.992248 0"/>
+        <v p="-0.256 -0.129 -0" n="0 -0 1" t0="0 0"/>
+        <v p="0.256 0.129 -0" n="0 -0 1" t0="0.992248 1"/>
+        <v p="-0.256 0.129 -0" n="0 -0 1" t0="0 1"/>
+      </Vertices>
+      <Triangles count="2">
+        <t vi="0 1 2"/>
+        <t vi="3 4 5"/>
+      </Triangles>
+      <Subsets count="2">
+        <Subset firstVertex="0" numVertices="0" firstIndex="0" numIndices="0"/>
+        <Subset firstVertex="0" numVertices="6" firstIndex="0" numIndices="6"/>
+      </Subsets>
+    </IndexedTriangleSet>
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape name="adStrip" translation="-0.00412944 2.87806 0.36297" nodeId="17" materialIds="11, 13" shapeId="1"/>
+  </Scene>
+
+</i3D>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+
+<sounds>
+    <!-- DEFAULT_MOTOR_START -->
+    <motorStart file="sounds/puma_start.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.8" outdoor="1.1" />
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </motorStart>
+
+    <!-- DEFAULT_MOTOR_STOP" -->
+    <motorStop file="sounds/puma_stop.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.5" outdoor="0.8" />
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </motorStop>
+
+    <!-- DEFAULT_MOTOR_IDLE -->
+    <motor file="sounds/puma_idle.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.8" outdoor="1.1" >
+            <modifier type="MOTOR_RPM" value="0.00" modifiedValue="1.00" />
+            <modifier type="MOTOR_RPM" value="0.54" modifiedValue="0.00" />
+        </volume>
+        <pitch indoor="1.0" outdoor="1.0" >
+            <modifier type="MOTOR_RPM" value="0.00" modifiedValue="1.00" />
+            <modifier type="MOTOR_RPM" value="0.54" modifiedValue="2.0" />
+        </pitch>
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </motor>
+	
+	 <motor file="sounds/turbo.wav" linkNode="0>" innerRadius="15.0" outerRadius="100.0" >
+      <volume indoor="0.062" outdoor="0.07" >
+         <modifier type="MOTOR_LOAD" value="0.0" modifiedValue="0.00" />
+         <modifier type="MOTOR_LOAD" value="0.80" modifiedValue="1.00" />
+      </volume>
+      <pitch indoor="1.0" outdoor="1.0" >
+         <modifier type="MOTOR_LOAD" value="0.0" modifiedValue="0.25" />
+         <modifier type="MOTOR_LOAD" value="0.65" modifiedValue="1.00" />
+      </pitch>
+      <lowpassGain indoor="0.5" outdoor="1.0" />
+   </motor>
+	
+   <!-- Load-Sound aus dem Stand beim Anfahren -->
+    <motor file="sounds/puma_load.wav" linkNode="0>" innerRadius="23.5" outerRadius="110.0" >
+        <pitch indoor="1.0" outdoor="1.0" >
+            <modifier type="SPEED" value="0" modifiedValue="0.7" />
+            <modifier type="SPEED" value="20" modifiedValue="1.15" />
+        </pitch>
+        <lowpassGain indoor="0.6" outdoor="0.9" />
+        <volume indoor="0.3" outdoor="0.6" >
+            <modifier type="SPEED" value="20.0" modifiedValue="1.0" />
+            <modifier type="SPEED" value="22.5" modifiedValue="0.0" />
+            <modifier type="ACCELERATE" value="0" modifiedValue="0.0" />
+            <modifier type="ACCELERATE" value="0.2" modifiedValue="0.20" />
+        </volume>
+    </motor>
+   
+   <!-- DEFAULT_MOTOR_OFFLOAD_RUN -->
+	    <motor file="sounds/puma_run.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="1.5" outdoor="1.8" >
+            <modifier type="MOTOR_RPM" value="0.00" modifiedValue="0.00" />
+            <modifier type="MOTOR_RPM" value="0.10" modifiedValue="0.60" />
+            <modifier type="MOTOR_RPM" value="0.80" modifiedValue="1.00" />
+
+            <modifier type="MOTOR_LOAD" value="0.0" modifiedValue="1.00" />
+            <modifier type="MOTOR_LOAD" value="1.0" modifiedValue="0.00" />
+        </volume>
+        <pitch indoor="1.2" outdoor="1.2" >
+            <modifier type="SPEED"      value="1"   modifiedValue="0.65" />
+            <modifier type="SPEED"      value="50"   modifiedValue="1.00" />
+
+            <modifier type="MOTOR_RPM" value="0.25" modifiedValue="0.75" />
+            <modifier type="MOTOR_RPM" value="1.00" modifiedValue="1.00" />
+        </pitch>
+		<lowpassGain indoor="0.85" outdoor="1.0" />
+    </motor>
+	
+    <!-- DEFAULT_MOTOR_ONLOAD_RUN -->
+	 <motor file="sounds/puma_load.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+       <volume indoor="1.4" outdoor="1.7" >
+            <modifier type="MOTOR_RPM" value="0.00" modifiedValue="0.00" />
+            <modifier type="MOTOR_RPM" value="0.60" modifiedValue="1.00" />
+
+            <modifier type="MOTOR_LOAD" value="0.0" modifiedValue="0.00" />
+            <modifier type="MOTOR_LOAD" value="1.0" modifiedValue="1.20" />        
+        </volume>
+        <pitch indoor="1.1" outdoor="1.15" >
+            <modifier type="SPEED"      value="1"   modifiedValue="0.65" />
+            <modifier type="SPEED"      value="60"   modifiedValue="1.00" />
+
+            <modifier type="MOTOR_RPM" value="0.05" modifiedValue="0.75" />
+            <modifier type="MOTOR_RPM" value="1.00" modifiedValue="1.00" />
+        </pitch>
+		<lowpassGain indoor="0.85" outdoor="1.0" />
+    </motor>
+	
+    <!-- DEFAULT_GEARBOX -->
+    <gearbox file="sounds/getriebe.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.4" outdoor="0.7" >
+            <modifier type="SPEED" value="0.0" modifiedValue="0.0" />
+            <modifier type="SPEED" value="50.0" modifiedValue="1.0" />
+        </volume>
+        <pitch indoor="1.0" outdoor="1.0" >
+            <modifier type="SPEED" value="0.0" modifiedValue="0.8" />
+            <modifier type="SPEED" value="50.0" modifiedValue="1.2" />
+        </pitch>
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </gearbox>
+     
+    <!-- DEFAULT_RETARDER -->
+    <retarder file="$data/sounds/vehicles/retarder/retarder_loop_01.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+       <volume indoor="0.05" outdoor="0.15" >
+            <modifier type="SPEED" value="0.0" modifiedValue="0.0" />
+            <modifier type="SPEED" value="50.0" modifiedValue="1.0" />
+            <modifier type="ACCELERATE" value="0" modifiedValue="1.0" />
+            <modifier type="ACCELERATE" value="0.01" modifiedValue="0.0" />
+            <modifier type="CRUISECONTROL" value="0" modifiedValue="1.0" />
+            <modifier type="CRUISECONTROL" value="0.01" modifiedValue="0.0" />
+        </volume>
+        <pitch indoor="0.5" outdoor="0.5" >
+            <modifier type="SPEED" value="0.0" modifiedValue="0.8" />
+            <modifier type="SPEED" value="50.0" modifiedValue="2.0" />
+        </pitch>
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </retarder>
+	
+    
+    <!-- BRAKE_COMPRESSOR_START -->
+    <airCompressorStart file="$data/sounds/vehicles/compressor/compressor_controller.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.3" outdoor="0.4" />
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </airCompressorStart>
+
+    <!-- BRAKE_COMPRESSOR_STOP -->
+    <airCompressorStop file="$data/sounds/vehicles/compressor/compressor_stop.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.3" outdoor="0.4" />
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </airCompressorStop>
+
+    <!-- BRAKE_COMPRESSOR_RUN -->
+    <airCompressorRun file="$data/sounds/vehicles/compressor/compressor_idle_loop.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" fadeOut="0.1" >
+        <volume indoor="0.3" outdoor="0.4" />
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </airCompressorRun>
+
+    <!-- BRAKE_SMALL -->
+    <compressedAir file="$data/sounds/vehicles/brake/brake_small.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="1.7" outdoor="2.0">
+            <modifier type="BRAKE_TIME" value="0.0" modifiedValue="0.0" />
+            <modifier type="BRAKE_TIME" value="1.0" modifiedValue="1.0" />
+        </volume>
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </compressedAir>
+	
+    <!-- BRAKE_REGULATOR_VALVE -->
+    <airRelease file="$data/sounds/vehicles/compressor/regulator_valve_01.wav" linkNode="0>" innerRadius="25.0" outerRadius="110.0" >
+        <volume indoor="0.3" outdoor="0.70" />
+        <pitch indoor="1.0" outdoor="1.0" />
+        <lowpassGain indoor="0.75" outdoor="1.0" />
+    </airRelease>
+
+</sounds>

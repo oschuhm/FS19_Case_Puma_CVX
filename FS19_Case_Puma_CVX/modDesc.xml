@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="45">
+    <author>Nervtöter, ihc533</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Case Puma CVX Multicontroler</en>
+    </title>
+    <description>
+        <en>
+			<![CDATA[Case IH: Puma Multicontroler
+price: 231.000€
+max. hp: 225/ 244/ 270
+max. speed: 55km/h
+specialisations:
+-rear Fender config. + Frontlight config.
+-color configurations
+-rimcolor configurations
+-original CNH Rims
+-360° worklights
+-IC
+-spring-loaded axle
+-Interior (most current version)
+-new Cab
+-new Mirrors
+-diaphanous frontgrill
+-...
+]]>
+        </en>
+        <de>
+			<![CDATA[Case IH: Puma Multicontroler
+Preis: 231.000€
+max. PS: 225/ 244/ 270
+max. Geschwingigkeit: 55km/h
+Spezifikationen und Änderungen:
+-Kotflügel konfig. + Frontscheinwerfer konfig.
+-Farb konfigurationen
+-Felgenfarb konfigurationen
+-Originale CNH Rims
+-360° Arbeitsbeleuchtung
+-IC
+-gefederte Vorderachse
+-Interior (der aktuellsten Version)
+-neue Spiegel
+-durchsichtiger Kühlergrill
+-Motorblock
+-...
+]]>
+        </de>
+    </description>
+    <iconFilename>icon_puma.png</iconFilename>
+    <multiplayer supported="true" />
+	
+	<specializations>
+        <specialization name="interactiveControl" className="InteractiveControl" filename="scripts/InteractiveControl.lua" />
+        <specialization name="interactiveWindows" className="InteractiveWindows" filename="scripts/InteractiveWindows.lua" />	
+    </specializations>
+	
+	<vehicleTypes>
+        <type name="PumaCVX" parent="tractor" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="interactiveControl" />
+            <specialization name="interactiveWindows" />	
+        </type>
+    </vehicleTypes>
+	
+	<l10n>
+		<text name="input_IC_SPACE">                       <en>Switch IC State</en>         <de>IC-Status wechseln</de>   </text>
+        <text name="input_IC_MOUSE">                       <en>Change IC State</en>         <de>IC aktivieren</de>        </text>
+        <text name="InteractiveControl_Off">               <en>Disable IC</en>              <de>IC deaktivieren</de>      </text>
+        <text name="InteractiveControl_On">                <en>Enable IC</en>               <de>IC aktivieren</de>        </text>
+        <text name="ic_component_close">                   <en>Close</en>                   <de>Schließen</de>            </text>
+        <text name="ic_component_open">                    <en>Open</en>                    <de>Öffnen</de>               </text>
+        <text name="ic_button_on">                         <en>Activate</en>                <de>Aktivieren</de>           </text>
+        <text name="ic_button_off">                        <en>Deactivate</en>              <de>Deaktivieren %s</de>      </text>
+		
+		<text name="backWindow">
+			<en>backWindow</en>
+			<de>Heckscheibe</de>
+		</text>
+		<text name="leftDoor">
+			<en>leftDoor</en>
+			<de>Linke Tür</de>
+		</text>
+		<text name="roof">
+			<en>roof</en>
+			<de>Dachluke</de>
+		</text>
+		<text name="rightDoor">
+			<en>rightDoor</en>
+			<de>Rechte Tür</de>
+		</text>
+		<text name="Beifahrer">
+			<en>passanger Seat</en>
+			<de>Beifahrer Sitz</de>
+		</text>
+		
+	</l10n>	
+
+	<inputBinding>
+		<actionBinding action="IC_SPACE">
+			<binding device="KB_MOUSE_DEFAULT" 	input="KEY_space" axisComponent="+" neutralInput="0" index="1"/>
+		</actionBinding>
+		<actionBinding action="IC_MOUSE">
+			<binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_LEFT" index="3"/>
+		</actionBinding>
+    </inputBinding>
+	
+	<actions>
+		<action name="IC_SPACE" 				category="VEHICLE"		axisType="HALF"/>
+		<action name="IC_MOUSE" 				category="VEHICLE"		axisType="HALF"/>
+    </actions>
+
+    <storeItems>
+        <storeItem xmlFilename="puma.xml"/>
+    </storeItems>
+</modDesc>
