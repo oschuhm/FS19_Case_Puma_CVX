@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="45">
-    <author>Nervtöter, ihc533</author>
-    <version>1.0.0.0</version>
+    <author>Nervtöter, ihc533, LSFarmers</author>
+    <version>1.0.0.0.1</version>
     <title>
-        <en>Case Puma CVX Multicontroler</en>
+        <en>Case Puma CVX Multicontroler LSF</en>
     </title>
     <description>
         <en>
@@ -52,13 +52,15 @@ Spezifikationen und Änderungen:
 	
 	<specializations>
         <specialization name="interactiveControl" className="InteractiveControl" filename="scripts/InteractiveControl.lua" />
-        <specialization name="interactiveWindows" className="InteractiveWindows" filename="scripts/InteractiveWindows.lua" />	
+        <specialization name="interactiveWindows" className="InteractiveWindows" filename="scripts/InteractiveWindows.lua" />
+		<specialization name="tirePressure" className="TirePressure" filename="specializations/TirePressure.lua" />
     </specializations>
 	
 	<vehicleTypes>
         <type name="PumaCVX" parent="tractor" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">
             <specialization name="interactiveControl" />
-            <specialization name="interactiveWindows" />	
+            <specialization name="interactiveWindows" />
+			<specialization name="tirePressure" />
         </type>
     </vehicleTypes>
 	
@@ -92,7 +94,30 @@ Spezifikationen und Änderungen:
 			<en>passanger Seat</en>
 			<de>Beifahrer Sitz</de>
 		</text>
-		
+		<text name="information_tirePressure">
+            <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
+			<de>Reifendruck [Ziel: %1.2f bar] [Aktuell: %1.2f bar]</de>
+        </text>
+        <text name="action_toggleTirePressure">
+            <en>Toggle pressure</en>
+			<de><![CDATA[Luft ablassen / aufblasen]]></de>
+        </text>
+        <text name="input_TP_TOGGLE_PRESSURE">
+            <en>Update pressure</en>
+			<de>Reifendruck einstellen</de>
+        </text>
+        <text name="input_TP_AXIS_PRESSURE_1">
+            <en>Inflate</en>
+			<de>Aufpumpen</de>
+        </text>
+		<text name="input_TP_AXIS_PRESSURE_2">
+            <en>Deflate</en>
+			<de>Ablassen</de>
+        </text>
+		<text name="configuration_valueDefaultTPS">
+            <en>Standard TPS</en>
+			<de>Standard RDA</de>
+        </text>
 	</l10n>	
 
 	<inputBinding>
@@ -102,11 +127,20 @@ Spezifikationen und Änderungen:
 		<actionBinding action="IC_MOUSE">
 			<binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_LEFT" index="3"/>
 		</actionBinding>
+		<actionBinding action="TP_TOGGLE_PRESSURE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_p"/>
+		</actionBinding>
+		<actionBinding action="TP_AXIS_PRESSURE">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pageup" axisComponent="+"/>
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pagedown" axisComponent="-"/>
+		</actionBinding>
     </inputBinding>
 	
 	<actions>
 		<action name="IC_SPACE" 				category="VEHICLE"		axisType="HALF"/>
 		<action name="IC_MOUSE" 				category="VEHICLE"		axisType="HALF"/>
+		<action name="TP_AXIS_PRESSURE" axisType="FULL"/>
+        <action name="TP_TOGGLE_PRESSURE" axisType="HALF"/>
     </actions>
 
     <storeItems>

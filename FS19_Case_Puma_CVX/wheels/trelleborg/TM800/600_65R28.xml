@@ -4,6 +4,10 @@
         <physics radius="0.746" width="0.6" mass="0.196" tireType="mud" frictionScale="1.60" maxLongStiffness="10" maxLatStiffness="120" maxLatStiffnessLoad="2" />
         <tire filename="$data/shared/wheels/trelleborg/TM800/R28_TM800.i3d" nodeLeft="4|0" nodeRight="4|0" maxDeformation="0.078" isCareWheel="false" tireTrackAtlasIndex="0" />
         <innerRim filename="wheels/rims.i3d" nodeLeft="0|0" nodeRight="0|1" scale="1.15 0.95 0.95" />
-
     </default>
+	<configurations>
+		<configuration id="tirePressureSystem" >
+            <additional filename="hub/hub.i3d" nodeLeft="0|0" nodeRight="0|1" offset="-0.035" scale="0.8 0.65 0.65"/>
+        </configuration>
+    </configurations>	
 </wheel>

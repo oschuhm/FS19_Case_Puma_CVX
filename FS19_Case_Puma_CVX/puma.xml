@@ -42,6 +42,18 @@
         </schemaOverlay>
     </base>
 	
+	<tirePressure configurationName="wheel" configurationIndices="3">
+		<sounds>
+            <air template="DEFAULT_SOWING_AIR_BLOWER">
+			<volume indoor="0.4" outdoor="0.85" />
+				<pitch indoor="1.0" outdoor="1.0" >
+					<modifier type="VALVE_LOAD" value="0.00" modifiedValue="0.80" />
+					<modifier type="VALVE_LOAD" value="1.00" modifiedValue="1.20" />
+				</pitch>
+			</air>
+		</sounds>
+	</tirePressure>
+	
     <wheels>
         <wheelConfigurations>
             <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="MITAS">
@@ -78,6 +90,28 @@
                         <physics rotSpeed="0" restLoad="2.1" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55" />
                     </wheel>
                     <wheel filename="wheels/trelleborg/TM800/710_70R38.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55" />
+                    </wheel>
+                    <foliageBendingModifier index="1" minX="-1.25" maxX="1.25" />
+                    <foliageBendingModifier index="2" minX="-1.30" maxX="1.30" />
+                </wheels>
+				<objectChange node="wheelBackLeft"  scaleActive="1.05 1 1" />
+				<objectChange node="wheelBackRight"  scaleActive="1.05 1 1" />
+            </wheelConfiguration>
+			<wheelConfiguration name="$l10n_configuration_valueDefaultTPS" price="5000" brand="TRELLEBORG">
+                <wheels autoRotateBackSpeed="2.2">
+                    <wheel filename="wheels/trelleborg/TM800/600_65R28.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontLeft"  driveNode="physWheelFrontLeft"  forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55" />
+                        <fender node="fenderLeft" rotMax="26" />
+                    </wheel>
+                    <wheel filename="wheels/trelleborg/TM800/600_65R28.xml" configId="tirePressureSystem"  isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55" />
+                        <fender node="fenderRight" rotMin="-26" />
+                    </wheel>
+                    <wheel filename="wheels/trelleborg/TM800/710_70R38.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55" />
+                    </wheel>
+                    <wheel filename="wheels/trelleborg/TM800/710_70R38.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true">
                         <physics rotSpeed="0" restLoad="2.1" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55" />
                     </wheel>
                     <foliageBendingModifier index="1" minX="-1.25" maxX="1.25" />
@@ -730,9 +764,9 @@
 			-->
 		
 			<!-- backright -->
-			<movingPart node="0>0|9|10|2|6" referencePoint="0>0|9|10|5|1" referenceFrame="0>0|9|10|5|1" >
+			<!--<movingPart node="0>0|9|10|2|6" referencePoint="0>0|9|10|5|1" referenceFrame="0>0|9|10|5|1" >
 				<translatingPart node="0>0|9|10|2|6|0" />
-			</movingPart>
+			</movingPart>-->
         </movingParts>
 		
         <sounds>
