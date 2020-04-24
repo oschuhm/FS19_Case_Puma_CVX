@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<wheel>
+    <default>
+        <physics radius="0.759" width="0.71" mass="0.233" tireType="mud" frictionScale="1.60" maxLongStiffness="8" maxLatStiffness="100" maxLatStiffnessLoad="2" />
+        <tire filename="$data/shared/wheels/michelin/machXbib/R30_machXbib.i3d" nodeLeft="1|0" nodeRight="1|0" maxDeformation="0.076" isCareWheel="false" tireTrackAtlasIndex="0" />
+        <outerRim filename="$data/shared/wheels/rims/rim001.i3d" node="1|0" widthAndDiam="23 30" />
+        <innerRim filename="$data/shared/wheels/rims/rim001.i3d" nodeLeft="3|0" nodeRight="3|1" widthAndDiam="23 30" />
+    </default>
+	<configurations>
+		<configuration id="tirePressureSystem" >
+            <additional filename="hub/hub.i3d" nodeLeft="0|0" nodeRight="0|1" offset="-0.025" scale="1 0.75 0.75"/>
+        </configuration>
+    </configurations>	
+</wheel>

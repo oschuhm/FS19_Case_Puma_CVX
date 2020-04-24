@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="45">
     <author>Nervtöter, ihc533, LSFarmers</author>
-    <version>1.0.0.0.1</version>
+    <version>1.0.0.0.2</version>
     <title>
         <en>Case Puma CVX Multicontroler LSF</en>
     </title>
@@ -118,6 +118,10 @@ Spezifikationen und Änderungen:
             <en>Standard TPS</en>
 			<de>Standard RDA</de>
         </text>
+		<text name="configuration_valueWheelBroadTPS">
+            <en>Broad Wheel TPS</en>
+			<de>Breitreifen RDA</de>
+        </text>		
 	</l10n>	
 
 	<inputBinding>

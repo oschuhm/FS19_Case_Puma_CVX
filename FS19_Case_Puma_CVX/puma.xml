@@ -42,7 +42,7 @@
         </schemaOverlay>
     </base>
 	
-	<tirePressure configurationName="wheel" configurationIndices="3">
+	<tirePressure configurationName="wheel" configurationIndices="3 11">
 		<sounds>
             <air template="DEFAULT_SOWING_AIR_BLOWER">
 			<volume indoor="0.4" outdoor="0.85" />
@@ -204,7 +204,7 @@
                     <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
             </wheelConfiguration>
-			 <wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="2500" brand="MICHELIN">
+			<wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="2500" brand="MICHELIN">
                 <wheels autoRotateBackSpeed="2.2">
                     <wheel filename="$data/shared/wheels/michelin/machXbib/710_55R30.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
                         <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
@@ -224,7 +224,7 @@
                     <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
 				</wheelConfiguration>
-				<wheelConfiguration name="$l10n_configuration_valueDefault" price="2500" brand="MITAS">
+			<wheelConfiguration name="$l10n_configuration_valueDefault" price="2500" brand="MITAS">
                 <wheels autoRotateBackSpeed="2.2">
                     <wheel filename="$data/shared/wheels/mitas/SFT/600_70R30.xml" configId="tirePressureSystem"  isLeft="true" hasTireTracks="true" hasParticles="true">
                         <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
@@ -244,7 +244,7 @@
                     <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
 				</wheelConfiguration>
-				<wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="2500" brand="MITAS">
+			<wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="2500" brand="MITAS">
                 <wheels autoRotateBackSpeed="2.2">
                     <wheel filename="$data/shared/wheels/mitas/SFT/600_70R30.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
                         <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
@@ -263,7 +263,27 @@
                     <foliageBendingModifier index="1" minX="-1.2" maxX="1.2"/>
                     <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
-				</wheelConfiguration>
+			</wheelConfiguration>
+			<wheelConfiguration name="$l10n_configuration_valueWheelBroadTPS" price="5000" brand="MICHELIN">
+                <wheels autoRotateBackSpeed="2.2">
+                    <wheel filename="wheels/michelin/machXbib/710_55R30.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderLeft" rotMax="25"/>
+                    </wheel>
+                    <wheel filename="wheels/michelin/machXbib/710_55R30.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderRight" rotMin="-25"/>
+                    </wheel>
+                    <wheel filename="wheels/michelin/machXbib/900_50R42.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
+                    </wheel>
+                    <wheel filename="wheels/michelin/machXbib/900_50R42.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
+                    </wheel>
+                    <foliageBendingModifier index="1" minX="-1.2" maxX="1.2"/>
+                    <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
+                </wheels>
+			</wheelConfiguration>
         </wheelConfigurations>
         <ackermannSteeringConfigurations>
             <ackermannSteering rotSpeed="40" rotMax="40" rotCenterWheel1="3" rotCenterWheel2="4"/>
