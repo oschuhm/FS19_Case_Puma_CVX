@@ -47,11 +47,15 @@
             <air template="DEFAULT_SOWING_AIR_BLOWER">
 			<volume indoor="0.4" outdoor="0.85" />
 				<pitch indoor="1.0" outdoor="1.0" >
-					<modifier type="VALVE_LOAD" value="0.00" modifiedValue="0.80" />
+					<modifier type="VALVE_LOAD" value="0.00" modifiedValue="0.70" />
 					<modifier type="VALVE_LOAD" value="1.00" modifiedValue="1.20" />
 				</pitch>
 			</air>
 		</sounds>
+		<dashboards>
+			<!--<dashboard displayType="NUMBER" valueType="currentTirePressure" numbers="numbersTirePressure" numberColor="0 0 0 0.6" precision="2" groups="MOTOR_ACTIVE"/>-->
+			<dashboard displayType="NUMBER" valueType="currentTirePressure" numbers="numbersTirePressure" numberColor="0 0 0 0" precision="2" groups="MOTOR_ACTIVE"/>
+		</dashboards>
 	</tirePressure>
 	
     <wheels>
@@ -182,79 +186,96 @@
             </wheelConfiguration>
             <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="MICHELIN">
                 <wheels autoRotateBackSpeed="2.2">
-                    <wheel filename="wheels/600_70R28_Michelin.xml" isLeft="true" hasTireTracks="true" hasParticles="true" >
-                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontLeft"  driveNode="physWheelFrontLeft"  forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55" />
-                        <fender node="fenderLeft" rotMax="26" />
+                    <wheel filename="$data/shared/wheels/michelin/cereXBib/620_70R30.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderLeft" rotMax="25"/>
                     </wheel>
-                    <wheel filename="wheels/600_70R28_Michelin.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55" />
-                        <fender node="fenderRight" rotMin="-26" />
+                    <wheel filename="$data/shared/wheels/michelin/cereXBib/620_70R30.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderRight" rotMin="-25"/>
                     </wheel>
-                    <wheel filename="wheels/800_70R38_Michelin.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55" />
+                    <wheel filename="$data/shared/wheels/michelin/cereXBib/800_70R38.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
                     </wheel>
-                    <wheel filename="wheels/800_70R38_Michelin.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55" />
+                    <wheel filename="$data/shared/wheels/michelin/cereXBib/800_70R38.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
                     </wheel>
-                    <foliageBendingModifier index="1" minX="-1.25" maxX="1.25" />
-                    <foliageBendingModifier index="2" minX="-1.30" maxX="1.30" />
+                    <foliageBendingModifier index="1" minX="-1.2" maxX="1.2"/>
+                    <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
             </wheelConfiguration>
-			<wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="0" brand="MICHELIN">
+			 <wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="2500" brand="MICHELIN">
                 <wheels autoRotateBackSpeed="2.2">
-                    <wheel filename="wheels/710_65R30_Michelin.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55"/>
-                        <fender node="fenderLeft" rotMax="26"/>
+                    <wheel filename="$data/shared/wheels/michelin/machXbib/710_55R30.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderLeft" rotMax="25"/>
                     </wheel>
-                    <wheel filename="wheels/710_65R30_Michelin.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55"/>
-                        <fender node="fenderRight" rotMin="-26"/>
+                    <wheel filename="$data/shared/wheels/michelin/machXbib/710_55R30.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderRight" rotMin="-25"/>
                     </wheel>
-                    <wheel filename="wheels/900_60R42_Michelin.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55"/>
+                    <wheel filename="$data/shared/wheels/michelin/machXbib/900_50R42.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
                     </wheel>
-                    <wheel filename="wheels/900_60R42_Michelin.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55"/>
+                    <wheel filename="$data/shared/wheels/michelin/machXbib/900_50R42.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
                     </wheel>
-                    <foliageBendingModifier index="1" minX="-1.25" maxX="1.25"/>
-                    <foliageBendingModifier index="2" minX="-1.30" maxX="1.30"/>
+                    <foliageBendingModifier index="1" minX="-1.2" maxX="1.2"/>
+                    <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
-				<objectChange node="physWheelFrontLeft"  scaleActive="1.25 1.1 1.1" />
-				<objectChange node="physWheelFrontRight"  scaleActive="1.25 1.1 1.1" />
-                <objectChange node="wheelBackLeft"  scaleActive="1.21 1 1" />
-				<objectChange node="wheelBackRight"  scaleActive="1.21 1 1" />
-			</wheelConfiguration>
-            <wheelConfiguration name="$l10n_configuration_valueWheelBroadWeights" price="1200" brand="MICHELIN">
+				</wheelConfiguration>
+				<wheelConfiguration name="$l10n_configuration_valueDefault" price="2500" brand="MITAS">
                 <wheels autoRotateBackSpeed="2.2">
-                    <wheel filename="wheels/710_65R30_Michelin.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55"/>
-                        <fender node="fenderLeft" rotMax="26"/>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/600_70R30.xml" configId="tirePressureSystem"  isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderLeft" rotMax="25"/>
                     </wheel>
-                    <wheel filename="wheels/710_65R30_Michelin.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.3" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.15" spring="54" damper="55"/>
-                        <fender node="fenderRight" rotMin="-26"/>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/600_70R30.xml" configId="tirePressureSystem"  isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderRight" rotMin="-25"/>
                     </wheel>
-                    <wheel filename="wheels/900_60R42_Michelin.xml" configId="weight3" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55"/>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/710_70R42.xml" configId="tirePressureSystem"  isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
                     </wheel>
-                    <wheel filename="wheels/900_60R42_Michelin.xml" configId="weight3" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="2.1" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.28" spring="31" damper="55"/>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/710_70R42.xml" configId="tirePressureSystem"  isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
                     </wheel>
-                    <foliageBendingModifier index="1" minX="-1.25" maxX="1.25"/>
-                    <foliageBendingModifier index="2" minX="-1.30" maxX="1.30"/>
+                    <foliageBendingModifier index="1" minX="-1.2" maxX="1.2"/>
+                    <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
                 </wheels>
-				<objectChange node="physWheelFrontLeft"  scaleActive="1.25 1.1 1.1" />
-				<objectChange node="physWheelFrontRight"  scaleActive="1.25 1.1 1.1" />
-				<objectChange node="wheelBackLeft"  scaleActive="1.21 1 1" />
-				<objectChange node="wheelBackRight"  scaleActive="1.21 1 1" />
-            </wheelConfiguration>
+				</wheelConfiguration>
+				<wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="2500" brand="MITAS">
+                <wheels autoRotateBackSpeed="2.2">
+                    <wheel filename="$data/shared/wheels/mitas/SFT/600_70R30.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontLeft" driveNode="physWheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderLeft" rotMax="25"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/600_70R30.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="2.2" repr="wheelFrontRight" driveNode="physWheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.14" spring="56" damper="55"/>
+                        <fender node="fenderRight" rotMin="-25"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/800_70R38.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/mitas/SFT/800_70R38.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="2.0" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.26" spring="32" damper="55"/>
+                    </wheel>
+                    <foliageBendingModifier index="1" minX="-1.2" maxX="1.2"/>
+                    <foliageBendingModifier index="2" minX="-1.3" maxX="1.3"/>
+                </wheels>
+				</wheelConfiguration>
         </wheelConfigurations>
-		
         <ackermannSteeringConfigurations>
             <ackermannSteering rotSpeed="40" rotMax="40" rotCenterWheel1="3" rotCenterWheel2="4"/>
             <ackermannSteering rotSpeed="40" rotMax="37" rotCenterWheel1="3" rotCenterWheel2="4"/>
             <ackermannSteering rotSpeed="40" rotMax="31" rotCenterWheel1="3" rotCenterWheel2="4"/>
         </ackermannSteeringConfigurations>
+        <hubs>
+            <hub linkNode="physWheelFrontLeft" filename="$data/shared/wheels/hubs/hub_n8_8.xml" isLeft="true" scale="0.40 0.40 0.40"/>
+            <hub linkNode="physWheelFrontRight" filename="$data/shared/wheels/hubs/hub_n8_8.xml" isLeft="false" scale="0.40 0.40 0.40"/>
+            <hub linkNode="wheelBackLeft" filename="$data/shared/wheels/hubs/hub_n10_9.xml" isLeft="true" scale="0.33 0.33 0.33"/>
+            <hub linkNode="wheelBackRight" filename="$data/shared/wheels/hubs/hub_n10_9.xml" isLeft="false" scale="0.33 0.33 0.33"/>
+        </hubs>
     </wheels>
 	
     <lights>
@@ -606,6 +627,12 @@
                 <objectChange node="cvx240_engine_decal" visibilityActive="true" visibilityInactive="false"/>
                 <objectChange node="cvx240RoofDecal" visibilityActive="true" visibilityInactive="false"/>
             </motorConfiguration>
+			<motorConfiguration name="Puma 240 CVX Tuned" hp="300" price="500">
+                <motor torqueScale="1.2688" minRpm="850" maxRpm="2200" maxForwardSpeed="53" maxBackwardSpeed="22" brakeForce="7" lowBrakeForceScale="0.28"/>
+                <transmission minForwardGearRatio="13.46" maxForwardGearRatio="300" minBackwardGearRatio="32" maxBackwardGearRatio="300" />
+                <objectChange node="cvx240_engine_decal" visibilityActive="true" visibilityInactive="false"/>
+                <objectChange node="cvx240RoofDecal"     visibilityActive="true" visibilityInactive="false"/>
+            </motorConfiguration>
         </motorConfigurations>
 		
         <exhaustEffects>
@@ -896,14 +923,15 @@
 	
 	<baseMaterialConfigurations useDefaultColors="false">
         <baseMaterialConfiguration name="Standard" color="CASEIH_RED1" />
+		<baseMaterialConfiguration color="SHARED_BLACK1" name="Black Edition" />
+		<baseMaterialConfiguration  color="SHARED_GREY2" name="Silberpfeil" />
+		<baseMaterialConfiguration  color="SHARED_WHITE1" name="Weiß" />
 		<baseMaterialConfiguration color="CASEIH_RED1" material="1" />
 		<baseMaterialConfiguration color="0.2961 0.0061 0.0061" />
-		<baseMaterialConfiguration color="JENZ_GREEN1" />
-		<baseMaterialConfiguration color="JENZ_RED1" />
 		<baseMaterialConfiguration color="SHARED_BLACK6" />
 		<baseMaterialConfiguration color="0.5776 0.5776 0.5776" material="18" />
-		<baseMaterialConfiguration name="Blackbeast" material="1" color="0 0 0" price="18400"/>
 		<baseMaterialConfiguration name="old2" material="6" color="0.6054842999 0.009696328702 0.02201299492" price="0"/>
+		
 		
         <material name="pumaCVX_mat" shaderParameter="colorMat0" />
 		<material name="Dach_mat" shaderParameter="colorMat0" />
@@ -916,6 +944,7 @@
 		<rimColorConfiguration name="Weiss ROUGH" color="0.95 0.95 0.95" material="18" price="0"/>
 		<rimColorConfiguration name="SILBER ROUGH" color="0.5776 0.5776 0.5776" material="18" price="0"/>			
 		<rimColorConfiguration name="Grau" color="SHARED_BLACK6" />
+		<rimColorConfiguration name="Black" material="1" color="0 0 0" price="0"/>
         <colorNode node="wheels"/>
     </rimColorConfigurations>
 
@@ -1109,6 +1138,7 @@
         <i3dMapping id="hydraulicSteeringLeftPunch" node="1>1|0|0"/>
         <i3dMapping id="hydraulicSteeringRight" node="1>1|1"/>
         <i3dMapping id="hydraulicSteeringRightPunch" node="1>1|1|0"/>
+		<!-- simpleIC Animations -->
 		<i3dMapping id="simpleICLSF_playerTrigger" 			node="0>0|9|12" />
 		<i3dMapping id="simpleICLSF_moveBackWindow" 		node="0>0|9|10|2|9" />
 		<i3dMapping id="simpleICLSF_moveRoofWindow" 		node="0>0|9|10|3|3" />
@@ -1120,5 +1150,9 @@
 		<i3dMapping id="simpleICLSF_ZylinderRfenster" 	node="0>0|9|10|2|5" />
 		<i3dMapping id="simpleICLSF_ZylinderLcab" 	node="0>0|9|10|8" />
 		<i3dMapping id="simpleICLSF_ZylinderLfenster" 	node="0>0|9|10|2|4" />
+		<!-- zusätzliche Displays -->
+		<i3dMapping id="numbersTirePressure"            node="0>0|9|0|6|7" />
+		<i3dMapping id="pipe_cover"            node="0>0|10|14" />
+		
     </i3dMappings>
 </vehicle>
